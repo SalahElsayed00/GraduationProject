@@ -24,8 +24,8 @@ namespace GraduationProject.MvcControllers
             HomeVM homeVM = new HomeVM()
             {
                 Cases = _context.Cases.AsNoTracking().ToList(),
-                mediators = _context.Mediators.AsNoTracking().ToList(),
-                casepayments = _context.Casepayment.AsNoTracking().ToList(),
+                Mediators = _context.Mediators.AsNoTracking().ToList(),
+                CasePayments = _context.CasePayments.AsNoTracking().ToList(),
             };
             // data case
             var numOfCase = homeVM.Cases.Count();
@@ -47,26 +47,26 @@ namespace GraduationProject.MvcControllers
             TempData["casehighprioritycount"] = numOfhighpriorityCase;
 
             // data mediator
-            var numOfMediator = homeVM.mediators.Count();
+            var numOfMediator = homeVM.Mediators.Count();
             TempData["mediatorcount"] = numOfMediator;
 
-            var numOfaccMediator = homeVM.mediators.Where(m => m.StatusId == StatusType.Accepted).Count();
+            var numOfaccMediator = homeVM.Mediators.Where(m => m.StatusId == StatusType.Accepted).Count();
             TempData["mediatoracccount"] = numOfaccCase;
 
-            var numOfrejMediator = homeVM.mediators.Where(m => m.StatusId == StatusType.Rejected).Count();
+            var numOfrejMediator = homeVM.Mediators.Where(m => m.StatusId == StatusType.Rejected).Count();
             TempData["mediatorrejcount"] = numOfrejCase;
 
-            var numOfpenMediator = homeVM.mediators.Where(m => m.StatusId == StatusType.Pending).Count();
+            var numOfpenMediator = homeVM.Mediators.Where(m => m.StatusId == StatusType.Pending).Count();
             TempData["mediatorpencount"] = numOfpenCase;
 
             //casepayment
-            var numberoftransaction = homeVM.casepayments.Count();
+            var numberoftransaction = homeVM.CasePayments.Count();
             TempData["numberoftransaction"] = numberoftransaction;
 
-            var sumofamount = homeVM.casepayments.Sum(m => m.Amount);
+            var sumofamount = homeVM.CasePayments.Sum(m => m.Amount);
             TempData["sumofamount"] = sumofamount;
 
-            var countcase = homeVM.casepayments.Select(c => c.CaseId).Distinct().Count();
+            var countcase = homeVM.CasePayments.Select(c => c.CaseId).Distinct().Count();
             TempData["countcase"] = countcase;
 
 

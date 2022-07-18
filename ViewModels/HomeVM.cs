@@ -7,7 +7,7 @@ namespace GraduationProject.ViewModels
     public class HomeVM
     {
         public IEnumerable<Case> Cases { get; set; }
-        public IEnumerable<Mediator> mediators { get; set; }
-        public IEnumerable<Casepayment> casepayments { get; set; }
+        public IEnumerable<Mediator> Mediators { get; set; }
+        public IEnumerable<CasePayment> CasePayments { get; set; }
     }
 }

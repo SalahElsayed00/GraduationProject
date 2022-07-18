@@ -1,11 +1,12 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using GraduationProject.Models;
 
 namespace GraduationProject.Models.CaseProperties
 {
-    public class Casepayment
-    {
+	public class CasePayment
+	{
 		public int Id { get; set; }
 
 		public int AdminId { get; set; }

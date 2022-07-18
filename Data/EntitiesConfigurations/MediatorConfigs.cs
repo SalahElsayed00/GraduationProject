@@ -31,10 +31,6 @@ namespace GraduationProject.Data.EntitiesConfigurations
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(m => m.Locale)
-                .WithMany()
-                .OnDelete(DeleteBehavior.Restrict);
-
             builder.Property(m => m.DateRegistered)
                 .HasDefaultValueSql("GETDATE()");
         }

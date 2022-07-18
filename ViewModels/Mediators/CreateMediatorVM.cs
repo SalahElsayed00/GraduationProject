@@ -71,7 +71,6 @@ namespace GraduationProject.ViewModels.Mediators
                 ProfileImage = FormFileHandler.ConvertToBytes(ProfileImage),
                 GenderId = GenderId,
                 SocialStatusId = SocialStatusId,
-                LocaleId = LocaleType.EN,
                 StatusId = StatusType.Accepted,
             };
         }

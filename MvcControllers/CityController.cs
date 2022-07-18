@@ -126,7 +126,7 @@ namespace GraduationProject.MvcControllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(uint id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (!await _context.Cities.AnyAsync(c => c.Id == id))
                 return NotFound();
